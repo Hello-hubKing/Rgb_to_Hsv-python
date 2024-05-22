@@ -10,6 +10,7 @@ img_toresize=transforms.Resize((400,400),interpolation=Image.BILINEAR)
 img_cover=img_toresize(img_cover)
 img_cover=img_totensor(img_cover)
 def rgb_hsv(image):
+    #####image B,C,H,W
     B,C,H,W=image.shape
     hue = torch.zeros(image.shape[0], image.shape[2], image.shape[3]).to(image.device)
     eps=1e-7
